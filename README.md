@@ -35,7 +35,15 @@
 	se n ≤ 1
 	então f [n] ← n
 	senão f [n] ← LOOKUP-FIBO(f, n − 1) + LOOKUP-FIBO(f, n − 2)
-	devolva f [n]
+	devolva f [n]lookupFibo(FibonacciMemoization.java:17)
+        at FibonacciMemoization.lookupFibo(FibonacciMemoization.java:17)
+        at FibonacciMemoization.lookupFibo(FibonacciMemoization.java:17)
+        at FibonacciMemoization.lookupFibo(FibonacciMemoization.java:17)
+        at FibonacciMemoization.lookupFibo(FibonacciMemoization.java:17)
+        at FibonacciMemoization.lookupFibo(FibonacciMemoization.java:17)
+        at FibonacciMemoization.lookupFibo(FibonacciMemoization.java:17)
+        at FibonacciMemoization.lookupFibo(FibonacciMemoization.java:17)
+        at FibonacciMemoization.lookupFibo(FibonacciMemoization.java:17)
    ``` 
    
 1. Monte uma tabela com a contabilização das execuções anteriores (número de iterações e número de instruções) e com os resultados das execuções. As linhas da tabela são os algoritmos implementados, as colunas os valores para testar e contabilizar.
