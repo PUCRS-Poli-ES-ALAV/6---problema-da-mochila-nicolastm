@@ -1,11 +1,24 @@
 1. Monte uma tabela com a contabilização das execuções anteriores (número de iterações e número de instruções) e com os resultados das execuções. As linhas da tabela são os algoritmos implementados, as colunas os valores para testar e contabilizar.
 
 
-
-nicolastm@pop-os:~/ALgoritimos/6---problema-da-mochila-nicolastm$  /usr/bin/env /usr/lib/jvm/java-21-openjdk-amd64/bin/java -XX:+ShowCodeDetailsInExceptionMessages -cp /home/nicolastm/.config/Code/User/workspaceStorage/904f4cfc123d9aaebd99bbe030cf0c4f/redhat.java/jdt_ws/6---problema-da-mochila-nicolastm_e0069f21/bin FibonacciRecursivo 
-FIBO-REC(4) = 3 | Tempo: 1814 ns
-FIBO-REC(8) = 21 | Tempo: 4850 ns
-FIBO-REC(16) = 987 | Tempo: 199130 ns
-FIBO-REC(32) = 2178309 | Tempo: 10672064 ns
-
+| Algoritmo          | Valor | Resultado     | Tempo (ns) |
+|---------------------|-------|---------------|------------|
+| FibonacciRecursivo | 4     | 3             | 1814       |
+| FibonacciRecursivo | 8     | 21            | 4850       |
+| FibonacciRecursivo | 16    | 987           | 199130     |
+| FibonacciRecursivo | 32    | 2178309       | 10672064   |
+| FibonacciIterativo | 4     | 3             | 1042       |
+| FibonacciIterativo | 8     | 21            | 458        |
+| FibonacciIterativo | 16    | 987           | 459        |
+| FibonacciIterativo | 32    | 2178309       | 625        |
+| FibonacciIterativo | 128   | -1361106235   | 1875       |
+| FibonacciIterativo | 1000  | 1556111435    | 13917      |
+| FibonacciIterativo | 10000 | 1242044891    | 140875     |
+| FibonacciMemoization | 4   | 3             | 8041       |
+| FibonacciMemoization | 8   | 21            | 1750       |
+| FibonacciMemoization | 16  | 987           | 1333       |
+| FibonacciMemoization | 32  | 2178309       | 2000       |
+| FibonacciMemoization | 128 | -1361106235   | 25584      |
+| FibonacciMemoization | 1000| 1556111435    | 432500     |
+| FibonacciMemoization | 10000| 1242044891   | 795750     |
 
