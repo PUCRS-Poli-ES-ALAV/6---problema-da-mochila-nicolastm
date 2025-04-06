@@ -22,3 +22,22 @@
 | FibonacciMemoization | 1000| 1556111435    | 432500     |
 | FibonacciMemoization | 10000| 1242044891   | 795750     |
 
+## Comparativo de Resultados - Problema da Mochila
+
+### 🧪 Casos testados
+
+| Caso                      | Abordagem             | Valor Máximo | Iterações | Blocos Selecionados   |
+|---------------------------|------------------------|---------------|------------|------------------------|
+| Caso Original             | Força Bruta            | 9             | 27         | [2, 3, 4]              |
+| Caso Original             | Programação Dinâmica   | 9             | 28         | [2, 3, 4]              |
+| Caso de Teste 1 (Moodle)  | Força Bruta            | 309           | 362        | [1, 2, 3, 4, 6]        |
+| Caso de Teste 1 (Moodle)  | Programação Dinâmica   | 309           | 1650       | [1, 2, 3, 4, 6]        |
+| Caso de Teste 2 (Moodle)  | Força Bruta            | 150           | 85         | [1, 2, 5]              |
+| Caso de Teste 2 (Moodle)  | Programação Dinâmica   | 150           | 1140       | [1, 2, 5]              |
+
+### 📌 Observações
+
+- A **programação dinâmica** realiza mais iterações porque percorre toda a matriz de possibilidades.
+- A **força bruta** pode fazer menos chamadas em casos pequenos, mas seu tempo de execução cresce **exponencialmente** com o número de itens.
+- Mesmo com menos iterações em certos casos, a força bruta **não escala bem** com instâncias maiores.
+
