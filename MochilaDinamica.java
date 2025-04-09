@@ -5,21 +5,30 @@ public class MochilaDinamica {
     public static int mochilaPD(int[] pesos, int[] valores, int capacidade, int[][] maxTab) {
         int n = pesos.length;
         int iteracoes = 0;
+        int instrucoes = 0;
+        long inicio = System.nanoTime();
 
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= capacidade; j++) {
                 iteracoes++;
+                instrucoes++;
                 if (pesos[i - 1] <= j) {
+                    instrucoes += 3;
                     maxTab[i][j] = Math.max(
                         maxTab[i - 1][j],
                         valores[i - 1] + maxTab[i - 1][j - pesos[i - 1]]
                     );
                 } else {
+                    instrucoes++;
                     maxTab[i][j] = maxTab[i - 1][j];
                 }
             }
         }
 
+        long fim = System.nanoTime();
+
+        System.out.println("Tempo (ns): " + (fim - inicio));
+        System.out.println("Instruções: " + instrucoes);
         System.out.println("Iterações: " + iteracoes);
         return maxTab[n][capacidade];
     }
@@ -31,7 +40,7 @@ public class MochilaDinamica {
 
         while (i > 0 && j > 0) {
             if (maxTab[i][j] != maxTab[i - 1][j]) {
-                selecionados.add(i); // Base 1
+                selecionados.add(i);
                 j -= pesos[i - 1];
             }
             i--;
@@ -52,21 +61,21 @@ public class MochilaDinamica {
     }
 
     public static void main(String[] args) {
-        executarCaso("Caso original", 
-            new int[]{5, 2, 2, 1}, 
-            new int[]{2, 4, 2, 3}, 
+        executarCaso("Caso original",
+            new int[]{5, 2, 2, 1},
+            new int[]{2, 4, 2, 3},
             7
         );
 
-        executarCaso("Caso de teste 1 do Moodle", 
-            new int[]{23, 31, 29, 44, 53, 38, 63, 85, 89, 82}, 
-            new int[]{92, 57, 49, 68, 60, 43, 67, 84, 87, 72}, 
+        executarCaso("Caso de teste 1 do Moodle",
+            new int[]{23, 31, 29, 44, 53, 38, 63, 85, 89, 82},
+            new int[]{92, 57, 49, 68, 60, 43, 67, 84, 87, 72},
             165
         );
 
-        executarCaso("Caso de teste 2 do Moodle", 
-            new int[]{56, 59, 80, 64, 75, 17}, 
-            new int[]{50, 50, 64, 46, 50, 5}, 
+        executarCaso("Caso de teste 2 do Moodle",
+            new int[]{56, 59, 80, 64, 75, 17},
+            new int[]{50, 50, 64, 46, 50, 5},
             190
         );
     }
